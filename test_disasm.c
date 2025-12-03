@@ -16,11 +16,14 @@ static const uint32_t test_instructions[] = {
     0xF81F0FE0,  // stur x0, [sp, #-16]
     0xF8408420,  // ldr x0, [x1], #8
     0xF8410C00,  // ldr x0, [x0, #16]!
+    0xF940001F,  // ldr xzr, [x0]
     0xB9400000,  // ldr w0, [x0]
+    0xB940001F,  // ldr wzr, [x0]
     0x39400000,  // ldrb w0, [x0]
     0x79400000,  // ldrh w0, [x0]
     0xB9800000,  // ldrsw x0, [x0]
     0xF9000000,  // str x0, [x0]
+    0xF900001F,  // str xzr, [x0]
     0xB9000000,  // str w0, [x0]
     0x39000000,  // strb w0, [x0]
     0x79000000,  // strh w0, [x0]
@@ -158,10 +161,13 @@ static void test_load_store_instructions(void) {
         0xF9401000,  // ldr x0, [x0, #32]
         0xF8408420,  // ldr x0, [x1], #8
         0xF8410C00,  // ldr x0, [x0, #16]!
+        0xF940001F,  // ldr xzr, [x0]
         0xF81F0FE0,  // stur x0, [sp, #-16]
         0xF9000000,  // str x0, [x0]
         0xF9000420,  // str x0, [x1, #8]
+        0xF900001F,  // str xzr, [x0]
         0xB9400000,  // ldr w0, [x0]
+        0xB940001F,  // ldr wzr, [x0]
         0x39400000,  // ldrb w0, [x0]
         0x79400000,  // ldrh w0, [x0]
         0xB9800000,  // ldrsw x0, [x0]
